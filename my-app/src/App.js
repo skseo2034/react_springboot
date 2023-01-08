@@ -15,6 +15,7 @@ const b = 20; // 상수
 
 function App() {
 	let b = 20;
+	let list = [1, 2, 3];
 
 	const myStyle = {
 		color: 'red',
@@ -30,6 +31,11 @@ function App() {
 				안녕{a === 10 ? ' 10입니다' : ' 10이 아닙니다'}
 			</div>
 			<h1 className="box-style">해딩태그{b === 20 && ' 20입니다'}</h1>
+			<div>
+				{list.map(n => (
+					<h1>{n}</h1>
+				))}
+			</div>
 		</>
 	);
 }

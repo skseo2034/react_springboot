@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // concat, filter, map, slice, spread 연산자.
+
+      console.log("1 ===================== 스프레드 연산자");
+      const a = [1, 2, 3];
+      // const b = a; // 얕은복사(X)
+      const b = [...a]; // 깊은복사 , 스프레드(흩뿌리다) 연산자 사용
+      b.push(4); // 데이터 변경
+      console.log(`a의 값은 : ${a}`); // 1, 2, 3
+      console.log(`b의 값은 : ${b}`); // 1, 2, 3, 4
+
+      console.log("2 ===================== 추가하기");
+      const a2 = [1,2,3];
+      const b2 = a2.concat(4);
+      console.log(`a2의 값은 : ${a2}`); // 1, 2, 3
+      console.log(`b2의 값은 : ${b2}`); // 1, 2, 3, 4
+      const c2 = [...a, 4];
+      console.log(`c2의 값은 : ${c2}`); // 1, 2, 3, 4
+      const d2 = [0, ...a, 4];
+      console.log(`d2의 값은 : ${d2}`); // 0, 1, 2, 3, 4
+
+      console.log("3 ===================== 걸러내기"); // 삭제하기 시 사용
+      const a3 = [1,2,3];
+      const b3 = a3.filter((n) => { // filter 은 boolean 를 return 받음, filter 은 true 만 걸러낸다.
+        return n != 1;
+      });
+      console.log(`a3의 값은 : ${a3}`); // 1, 2, 3
+      console.log(`b3의 값은 : ${b3}`); // 2, 3
+
+      console.log("4 ===================== 잘라내기"); // 삭제하기 시 사용
+      const a4 = [1,2,3];
+      const b4 = a4.slice(0, 2);
+      console.log(b4); // [1, 2]
+      // const c4 = [a4.slice(0,2)];
+      // console.log(c4); // [[1, 2]]
+
+      // const c4 = [...a4.slice(0,2)];
+      // console.log(c4); // [1, 2]
+
+      const c4 = [...a4.slice(0,2), 4, ...a4.slice(2, 3)]; // 중간 삽입 응용
+      console.log(c4); // [1, 2, 3, 4]
+
+      console.log("5 ===================== 반복하기"); // 삭제하기 시 사용
+      const a5 = [1,2,3];
+      /*for (let i=0;a5.length;i++) { // jsx 사용 불가
+        console.(a5[i]);
+      }*/
+     // a5.forEach((n) => {console.log(n)}); // 1, 2, 3 ** 리턴이 안됨. 그래서 jsx 사용 못합.
+     // const b5 = a5.map((n) =>n); // const b6 =  [...a5] 와 동일
+     // console.log(b5); // [1, 2, 3]
+
+      const b5 = a5.map(n => n+10);// const b6 =  [...a5] 와 동일
+      console.log(b5); // [11, 12, 13]
+    </script>
+  </body>
+</html>
