@@ -59,6 +59,30 @@
 
       const b5 = a5.map(n => n+10);// const b6 =  [...a5] 와 동일
       console.log(b5); // [11, 12, 13]
+
+      const a6 = {id:1, name:'홍길동'};
+      const b6 = {...a6, name:'임꺽정'};
+      console.log(b6); // id:1, name:'임꺽정'
+
+      const data = {phone:'2222'};
+      const a7 = {id:1, name:'홍길동', phone:'3333'};
+      const b7 = {...a7, ...data};
+      console.log(b7); // id:1, name:'홍길동', phone:'2222'
+
+      const users = [
+        {id:1, name:'수고', phone:'2222'},
+        {id:2, name:'수고2', phone:'3333'},
+        {id:3, name:'수고3', phone:'4444'},
+      ];
+
+      const updateUserDto = {
+        id:2, name:'홍길동'
+      };
+
+      const newUsers = users.map(
+              user => user.id === updateUserDto.id ? {...user, ...updateUserDto} : user
+      );
+      console.log('newUser', newUsers); // {id: 1, name: '수고', phone: '2222'}, {id: 2, name: '홍길동', phone: '3333'}, {id: 3, name: '수고3', phone: '4444'}
     </script>
   </body>
 </html>
