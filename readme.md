@@ -20,6 +20,13 @@
         따라서 SPA 라 부른다. Single Page Application 이다.
     3. JSX 문법을 사용한다.
 
+### styled componets
+    - https://styled-components.com/
+    - 별도 css 를 만들어서 사용하라. (예. App.css)
+    - const a = 'color: red'; 이와 같이 만들어 사용하는 것 비추함.
+    - 또 styled compnents 사용을 권장함.
+    - 설치 : npm install --save styled-components
+
 ### 참고사항
     - npm 과 npx 차이
         - npm
@@ -40,3 +47,10 @@
             => 최적화 하는 것이다.
         - react 에서 사용하는 javascript 깊은 복사 함수(test.hmtl 참조)
             - concat, filter, map, slice, spread 연산자.
+        - useMemo 와 useEffect 의 차이 : https://whales.tistory.com/87
+            useMemo의 경우 "생성"함수에 관련된 기능입니다. 생성자 함수가 고비용(처리 시간이 오래 걸리는 등)인 경우 렌더링마
+            다 계산하는 것은 처리 시간이 오래 걸리므로 값을 기억해놓고 의존성이 변경되었을 경우에만 다시 계산해주는 기능입니다.
+            useEffect의 경우는 api 호출, 타이머 등 렌더링 과정에서 한 번만 호출해도 될 기능들이 렌더링되어 실행되거나, 
+            호출과정에서 렌더링에 영향을 끼칠 수 있는 것을 모아서 따로 처리하기 위한 기능입니다.
+            둘의 가장 큰 차이점은 useEffect는 해당 컴포넌트의 렌더링이 완료된 후에 실행되지만, useMemo는 렌더링 중에 실행되어 집니다.
+        -  useCallback vs useMemo vs useEffect 차이 : https://twil.weekwith.me/3%EA%B8%B0/%EC%A0%95%EC%84%A0%EB%AF%B8/2021-10-31-useCallback-useMemo-useEffect/
