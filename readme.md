@@ -26,6 +26,7 @@
     - const a = 'color: red'; 이와 같이 만들어 사용하는 것 비추함.
     - 또 styled compnents 사용을 권장함.
     - 설치 : npm install --save styled-components
+    - styled-components 플러그인 설치
 
 ### 참고사항
     - npm 과 npx 차이
