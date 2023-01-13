@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Sub from './Sub';
 
 // return 시 하나의 Dom 만 리턴 할 수 있다.

@@ -5,12 +5,8 @@ module.exports = {
 		browser: true,
 		node: true,
 	},
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/eslint-recommended',
-		'plugin:@typescript-eslint/recommended',
-	],
-	plugins: ['prettier', '@typescript-eslint'],
+	extends: ['plugin:react/recommended', 'plugin:prettier/recommended'],
+	parser: '@typescript-eslint/parser',
 	rules: {
 		'prettier/prettier': [
 			'error',
@@ -21,14 +17,20 @@ module.exports = {
 				tabWidth: 4,
 				printWidth: 120,
 				bracketSpacing: true,
-				arrowParens: 'always', // 'avoid',
+				arrowParens: 'always', // avoid 는 파라메터 한개 일대 괄호 안 넣음.
 				endOfLine: 'auto',
+				'react/prop-types': 'off',
 			},
 		],
 	},
 	parserOptions: {
 		parser: '@typescript-eslint/parser',
 		//project: 'tsconfig.json',
+		//sourceType: 'module',
+		ecmaFeatures: {
+			jsx: true,
+		},
+		// ecmaVersion: 'latest',
 		//sourceType: 'module',
 	},
 };
