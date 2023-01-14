@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Home from '../components/home/Home';
 
 function HomePage(props) {
@@ -10,6 +8,7 @@ function HomePage(props) {
 	// 임의로 받았다 치고
 	const [boards, setBoards] = useState([]);
 	const [number, setNumber] = useState(0);
+	const [user, setUser] = useState({});
 
 	const add1Number = () => {
 		setNumber(number + 1);
@@ -30,13 +29,12 @@ function HomePage(props) {
 		// 데이터가 들어가면 상태값이으로 다시 <Home /> 이 그려진다.
 		// 그래서 무조건 상태갓이여야 한다.
 		setBoards([...datas]);
+		setUser({ id: 1, username: 'sukyo' });
 	}, []);
 
 	return (
 		<div>
-			<Header />
-			<Home boards={boards} setBoards={setBoards} number={number} add1Number={add1Number} />
-			<Footer />
+			<Home boards={boards} setBoards={setBoards} number={number} add1Number={add1Number} user={user} />
 		</div>
 	);
 }

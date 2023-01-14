@@ -28,6 +28,37 @@
     - 설치 : npm install --save styled-components
     - styled-components 플러그인 설치
 
+### React router dom
+    - react 는 spa 이다. single page application 이다. 따라서 a tag 사용을 하지 못한다.
+    - react router 을 사용해야 한다.
+    - 구글 > react router dom 검색 > npm 으로 설치 : npm i react-router-dom
+    - 설치 후 <BrowserRouter> 로 모든 컴포넌트를 감싼다. 즉 index.js 에서만 감싸면 된다.
+        - 코드
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(
+                <React.StrictMode>
+                    <BrowserRouter>
+                        <App_14 />
+                    </BrowserRouter>
+                </React.StrictMode>
+            );
+    - App_14.jsx 수정 
+        - 모든 페이지에 <Hearder /> 와 <Footer /> 가 있다고 가정 할때 수정
+            아니면 여기에 수정하면 안됨.
+        - 코드
+            function App_14() {
+                return (
+                    <>
+                        <Header />
+                        <Route path="/" element={HomePage} /> 
+                        <Route path="/login" element={LoginPage} />
+                        <Footer />
+                    </>
+                );
+        - 실제 router 은 화면에서 객체만 바꾸치기 하는 것이다.
+            / 일때 homePage.jsx 로 가고, /login 일때 loginPage.jsx 로 간다 => 화면 바꿔치기.
+}
+
 ### 참고사항
     - npm 과 npx 차이
         - npm
