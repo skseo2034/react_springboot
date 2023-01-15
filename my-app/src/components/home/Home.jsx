@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Button } from 'react-bootstrap';
 
 // 부모로 부터 받은 props 를 가지고 스타일링을 동적으로 할것이라면?
 // 여기의 props 는 부모 부터 받은 Home function props 와 다른것이다.
@@ -26,6 +27,7 @@ const Home = (props) => {
 
 	return (
 		<div>
+			<Button variant="primary">Primary</Button>
 			<h1>홈 : {number}</h1>
 			<StyledAddButton user={user} onClick={add1Number}>
 				1씩증가

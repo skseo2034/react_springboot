@@ -30,6 +30,8 @@
 
 ### React router dom
     - react 는 spa 이다. single page application 이다. 따라서 a tag 사용을 하지 못한다.
+        - react 의 단점은 최초 로딩시 느리다. webpack 로 받아야 할 데이터 가 많다.
+            a tag 사용시 전체 리로드 된다. 최초 로딩을 계속 반복한다. => 그래서 사용하면 안된다.
     - react router 을 사용해야 한다.
     - 구글 > react router dom 검색 > npm 으로 설치 : npm i react-router-dom
     - 설치 후 <BrowserRouter> 로 모든 컴포넌트를 감싼다. 즉 index.js 에서만 감싸면 된다.
@@ -55,9 +57,26 @@
                         <Footer />
                     </>
                 );
-        - 실제 router 은 화면에서 객체만 바꾸치기 하는 것이다.
+            }
+        - 실제 라우터 은 화면에서 객체만 바꾸치기 하는 것이다.
             / 일때 homePage.jsx 로 가고, /login 일때 loginPage.jsx 로 간다 => 화면 바꿔치기.
-}
+        - 라우트를 통한 파라메터 전달. (참고 : https://goddaehee.tistory.com/305)
+            - 코드
+                <Route path="/login/:id" element={<LoginPage />} />
+                <Link to="/login/10">메뉴 2: login 페이지로 가기</Link>
+                const { id } = useParams();
+	            console.log('LoginPages.jsx useParams', id);
+        - react-router-dom v6 업데이트 후 달라진 점 (ft. Prompt 창 띄우는 법)
+            - 참고 url : https://kyung-a.tistory.com/36
+
+### 리액트 부트스트랩 이용
+    - 구글 검색 > 리액트 bootstrap
+        - 참고 url : https://react-bootstrap.github.io/getting-started/introduction
+    - 코드
+        import 'bootstrap/dist/css/bootstrap.min.css'; // index.js 또는 app.js 
+        import { Button } from 'react-bootstrap';
+        <Button variant="primary">Primary</Button>
+        
 
 ### 참고사항
     - npm 과 npx 차이
