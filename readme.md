@@ -105,3 +105,4 @@
             호출과정에서 렌더링에 영향을 끼칠 수 있는 것을 모아서 따로 처리하기 위한 기능입니다.
             둘의 가장 큰 차이점은 useEffect는 해당 컴포넌트의 렌더링이 완료된 후에 실행되지만, useMemo는 렌더링 중에 실행되어 집니다.
         -  useCallback vs useMemo vs useEffect 차이 : https://twil.weekwith.me/3%EA%B8%B0/%EC%A0%95%EC%84%A0%EB%AF%B8/2021-10-31-useCallback-useMemo-useEffect/
+        - CSS Flex 참고 : https://studiomeal.com/archives/197
