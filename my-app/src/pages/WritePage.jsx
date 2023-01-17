@@ -1,11 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 
 const WritePage = () => {
 	const [value, setValue] = useState('');
 	const handleWrite = () => {
 		//ListPage의 setPosts에 무엇을 담아야 함?
-		let post = { id: 6, title: value };
-		setPosts(post);
+		// let post = { id: 6, title: value };
 	};
 	return (
 		<div>

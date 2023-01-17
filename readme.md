@@ -106,3 +106,53 @@
             둘의 가장 큰 차이점은 useEffect는 해당 컴포넌트의 렌더링이 완료된 후에 실행되지만, useMemo는 렌더링 중에 실행되어 집니다.
         -  useCallback vs useMemo vs useEffect 차이 : https://twil.weekwith.me/3%EA%B8%B0/%EC%A0%95%EC%84%A0%EB%AF%B8/2021-10-31-useCallback-useMemo-useEffect/
         - CSS Flex 참고 : https://studiomeal.com/archives/197
+        - Computed Property Name
+            - https://velog.io/@yujuck/object-key%EC%97%90-%EB%B3%80%EC%88%98%EB%A5%BC-%EB%84%A3%EC%9C%BC%EB%A0%A4%EB%A9%B4-Computed-Property-Name
+            - https://yorr.tistory.com/13
+            - https://noritersand.github.io/javascript/javascript-%EA%B3%84%EC%82%B0%EB%90%9C-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%EB%AA%85-computed-property-names/
+            - 개요
+```
+            프로퍼티의 이름을 정의하는 새로운 방법을 정리한 글.
+            {
+                [expression]: value
+            }
+```
+                객체 리터럴의 프로퍼티명 자리에 대괄호[]와 표현식의 조합으로 사용한다. expression의 실행 결과가 프로퍼티의 이름이 된다.
+```                
+                var prop = 'bbyong';
+                var obj = {
+                    [prop]: 123
+                };
+```                
+                obj; // Object { bbyong: 123 }
+```
+                var obj = {
+                    ['ddi' + 'yong']: 456
+                };
+```                
+                obj; // Object { ddiyong: 456 }
+```
+                var i = 0;
+                var obj = {
+                    ['idx' + i++]: i,
+                    ['idx' + i++]: i,
+                    ['idx' + i++]: i
+                };
+```                
+                obj; // Object { idx0: 1, idx1: 2, idx2: 3 }
+```
+                var nm = 'waldo';
+                var obj = {
+                    [nm.charAt(0).toUpperCase() + nm.slice(1)]: 'Hello there! Mighty fine morning'
+                };
+```                
+                obj; // Object { Waldo: "Hello there! Mighty fine morning" }
+                당연히 메서드명 또한 표현식으로 정의할 수 있다:
+```                
+                var obj = {
+                    ['john' + 'snow']: function() {
+                        console.log('I know nothing.');
+                    }
+                };
+```                
+                obj.johnsnow(); // I know nothing.
