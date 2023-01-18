@@ -76,6 +76,16 @@
         import 'bootstrap/dist/css/bootstrap.min.css'; // index.js 또는 app.js 
         import { Button } from 'react-bootstrap';
         <Button variant="primary">Primary</Button>
+
+### 플럭스(flux) & 리덕스(redux)
+    - 참조 url  
+        - https://facebook.github.io/flux/docs/in-depth-overview/
+    - flux의 개념은 -> 흐름, 다른 요청에 의해 반응 할 수 있다.
+    - 이 개념으로 만들어진데 Redux 이다.
+        - 요청 -> dispatcher -> store -> 요청을 구독하고 있는 모든 곳에 준다.
+    - 리덕스
+        - 설치 : 구글 react redux 검색 : https://react-redux.js.org/introduction/getting-started
+            - 
         
 
 ### 참고사항
