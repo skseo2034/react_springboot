@@ -16,3 +16,8 @@ jpa:
     ddl-auto: create
     naming:
       physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+  spring:
+    mustache:
+      cache=false:
