@@ -6,18 +6,20 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:cosdb
+    url: jdbc:h2:mem:cosdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
     password:
 
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+  mustache:
+    cache=false:
+
 jpa:
-  hibernate:
+    hibernate:
     ddl-auto: create
     naming:
       physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-
-
-  spring:
-    mustache:
-      cache=false:
