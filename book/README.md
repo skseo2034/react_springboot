@@ -13,3 +13,7 @@
 - npm i react-redux
 - npm i react-bootstrap
 - npm i bootstrap
+
+```text
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
