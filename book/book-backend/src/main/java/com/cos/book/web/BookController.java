@@ -17,9 +17,21 @@ public class BookController {
     public ResponseEntity<?> findAll1() {
         return new ResponseEntity<String>("ok", HttpStatus.OK);
     }
+
+    @CrossOrigin
     @PostMapping("/book")
     public ResponseEntity<?> save(@RequestBody Book book) {
         return new ResponseEntity<>(bookService.저장하기(book), HttpStatus.CREATED);
+    }
+    @CrossOrigin
+    @PostMapping("/book/initialData")
+    public ResponseEntity<?> saveInitialData() {
+        for (int i = 1; i <= 3; i++) {
+            Book book = new Book(null, "제목" + i, "ssk");
+            bookService.저장하기(book);
+        }
+
+        return new ResponseEntity<String>("ok", HttpStatus.CREATED);
     }
 
     @CrossOrigin
