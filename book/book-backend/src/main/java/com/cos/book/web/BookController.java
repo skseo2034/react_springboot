@@ -22,6 +22,7 @@ public class BookController {
         return new ResponseEntity<>(bookService.저장하기(book), HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @GetMapping("/book")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(bookService.모두가져오기(), HttpStatus.OK);
